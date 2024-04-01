@@ -1,0 +1,97 @@
+.card {
+    $self: &;
+    position: relative;
+    color: var(--text-light);
+    cursor: pointer;
+    border-radius: 20px;
+
+    &:hover {
+        #{$self}__image img {
+            transform: scale(1.2);
+        }
+    }
+    &.sold-out {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    &__image {
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        border-radius: 20px;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+
+            transition: transform 1s ease-in-out;
+        }
+    }
+    &__body {
+        padding-block: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__name {
+        line-height: 130%;
+        font-weight: 500;
+    }
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__pricing {
+        padding: 4px 8px;
+        border-radius: 6px;
+        background-color: #c4ff85;
+        color: var(--text-dark);
+        display: inline-flex;
+    }
+    &__rating {
+        font-size: 0.9rem;
+        svg {
+            width: 16px;
+            margin-right: 0.5rem;
+        }
+    }
+    &__votes {
+        font-size: 0.9rem;
+    }
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+    &__tag {
+        background-color: #cbebf4;
+        color: #0b4554;
+        color: var(--text-dark);
+        padding: 4px 8px;
+        border-radius: 24px;
+        font-size: 0.8rem;
+    }
+    &__popularity {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__votes {
+        color: var(--text-medium);
+    }
+    &__popular {
+        background-color: #ffde85;
+        color: var(--text-dark);
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        padding: 4px 8px;
+        border-radius: 16px;
+        font-size: 0.8rem;
+    }
+    &__availability {
+        color: #a30736;
+    }
+}

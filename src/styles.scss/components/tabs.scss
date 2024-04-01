@@ -1,0 +1,25 @@
+.tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__header {
+        display: flex;
+        gap: 16px;
+        margin-block: 24px;
+    }
+    &__btn {
+        padding: 8px 24px;
+        border: 1px solid var(--text-medium);
+        background-color: transparent;
+        border-radius: 8px;
+        color: var(--text-medium);
+
+        &.active {
+            background-color: #969696;
+            color: var(--text-dark);
+        }
+    }
+    &__body {
+        min-width: 100%;
+    }
+}
